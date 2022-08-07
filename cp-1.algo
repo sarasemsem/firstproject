@@ -1,6 +1,20 @@
 ALGORITHM my_algo
 VAR
-    set_declarations
+    nb_vowl,nb_words:INTEGER;
+    sentence:STRING;
+    vowls:STRING[]:={"a","e","i","o","u"};
 BEGIN
-    set_instructions
+    read(sentence);
+    nb_vowl:=0;
+    nb_words:=0;
+    FOR i FROM 0 TO sentence.length-1 STEP step  DO
+        IF (sentence[i]=" ") THEN
+            nb_words:=nb_words+1;
+        END_IF
+        FOR j FROM 0 TO vowls.length-1 STEP step  DO
+            IF (sentence[i]=vowls[j]) THEN
+                nb_vowl:=nb_vowl+1;
+            END_IF
+        END_FOR
+    END_FOR
 END
