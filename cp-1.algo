@@ -18,3 +18,32 @@ BEGIN
         END_FOR
     END_FOR
 END
+
+ALGORITHM sum
+VAR
+    s,i,j,a,b:INTEGER;
+    tab1:ARRAY_OF INTEGER[];
+    tab2:ARRAY_OF INTEGER[];
+BEGIN
+   Write("give the length of the array n°1");
+   Read(a);
+   Write("give the length of the array n°2");
+   Read(b);
+    FOR i FROM 0 TO a DO
+       Read(tab1[i]);// insert from user
+   END_FOR
+   FOR j FROM 0 TO b DO
+       Read(tab2[j]);// insert from user
+   END_FOR
+   s:=0;
+   IF (a>b) THEN
+    FOR i FROM 0 TO a STEP step  DO
+        FOR j FROM 0 TO b STEP step  DO
+            IF (tab1[i]==tab2[j]) THEN
+                s:=s+tab1[i];
+            END_IF
+        END_FOR
+    END_FOR
+   END_IF
+   Write(" the sum is =",s);
+END
