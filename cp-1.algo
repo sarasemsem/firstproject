@@ -37,9 +37,9 @@ BEGIN
    END_FOR
    s:=0;
    IF (a>b) THEN
-    FOR i FROM 0 TO a STEP step  DO
-        FOR j FROM 0 TO b STEP step  DO
-            IF (tab1[i]==tab2[j]) THEN
+    FOR i FROM 0 TO a-1 STEP step  DO
+        FOR j FROM 0 TO b-1 STEP step  DO
+            IF (tab1[i]=tab2[j]) THEN
                 s:=s+tab1[i];
             END_IF
         END_FOR
